@@ -177,7 +177,7 @@ const Producto = () => {
                                 >
                                     <CampoDiv>
                                         <input
-                                            name="text"
+                                            type="text"
                                             name="mensaje"
                                             onChange={comentarioChange}
                                         />

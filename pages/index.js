@@ -8,13 +8,13 @@ const FirstDiv =  styled.div`
     background-color: #f3f3f3;
 ` 
 const SecondDiv =  styled.div`
-    max-width: 1200px;
-    width: 95%;
     padding: 5rem 0;
     margin: 0 auto;
+    min-width: 568px;
 ` 
 const Ul =  styled.ul`
     background-color: #FFF;
+    min-width: 568px;
 ` 
 const Home = () => {
 

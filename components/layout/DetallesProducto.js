@@ -51,8 +51,10 @@ const Coments = styled.div`
     }
 `
 const Imagen = styled.img`
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: auto;
+    min-width: 9em;
+    min-heigth: 9em;
 
 `
 const Votos = styled.div`

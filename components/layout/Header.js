@@ -13,7 +13,7 @@ const ContenedorHeader = styled.div`
     max-width: 1200px;
     width: 95%;
     margin:0 auto;
-    @media (min-width: 768px){
+    @media (min-width: 268px){
         display: flex;
         justify-content: space-between;
     }
