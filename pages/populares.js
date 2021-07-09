@@ -6,12 +6,14 @@ import useProductos from '../hooks/useProductos';
 
 const FirstDiv =  styled.div`
     background-color: #f3f3f3;
+    min-width: 908px;
 ` 
 const SecondDiv =  styled.div`
-    max-width: 1200px;
     width: 95%;
     padding: 5rem 0;
     margin: 0 auto;
+    min-width: 908px;
+    min-height: 873px;
 ` 
 const Ul =  styled.ul`
     background-color: #FFF;

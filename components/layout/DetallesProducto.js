@@ -54,7 +54,7 @@ const Imagen = styled.img`
     width: 100%;
     height: auto;
     min-width: 9em;
-    min-heigth: 9em;
+    min-height: 9em;
 
 `
 const Votos = styled.div`
