@@ -13,16 +13,19 @@ import Boton from '../../components/ui/Boton';
 import Swal from 'sweetalert2';
 
 const ContenerdorProducto = styled.div`
+    min-width: 908px;
+    min-height: 873px;
     @media (min-width:968px){
-        display: grid;
+        display: flex;
         grid-template-columns: 2fr 1fr;
         column-gap: 2rem;
     }
 `
 const ImagenMenu = styled.img`
-    max-width: 100%;
-    width: 678px;
-    height: 498px;
+    width: 100%;
+    height: auto;
+    max-width: 580px;
+    max-height: 878px;
 `
 const OrderList = styled.ul`
     display: grid;

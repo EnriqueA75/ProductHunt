@@ -53,9 +53,8 @@ const Coments = styled.div`
 const Imagen = styled.img`
     width: 100%;
     height: auto;
-    min-width: 9em;
-    min-height: 9em;
-
+    min-width: 13em;
+    min-height: 13em;
 `
 const Votos = styled.div`
     flex: 0 0  auto;
