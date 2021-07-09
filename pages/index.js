@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import Layout from '../components/layout/Layout';
-import { FireBaseContext } from '../firebase';
 import DetallesProducto from '../components/layout/DetallesProducto';
-
+import useProductos from '../hooks/useProductos';
 
 const FirstDiv =  styled.div`
     background-color: #f3f3f3;
@@ -19,24 +18,8 @@ const Ul =  styled.ul`
 ` 
 const Home = () => {
 
-  const {firebase} = useContext(FireBaseContext)
-  const [productos, setProductos] = useState([])
+  const { productos } = useProductos('creado')
 
-  useEffect(() => {
-    const obtenerProductos = () => {
-      firebase.db.collection("productos").orderBy('creado', 'desc').onSnapshot(handleSnapshot)
-    }
-    obtenerProductos()
-  }, [])
-  function handleSnapshot (snapshot){
-    const productos = snapshot.docs.map(doc => {
-      return {
-        id: doc.id,
-        ...doc.data()
-      }
-    })
-    setProductos(productos)
-  }
   return (
     <div>
       <Layout>

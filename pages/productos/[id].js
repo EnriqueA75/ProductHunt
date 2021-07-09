@@ -10,6 +10,7 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import {es} from 'date-fns/locale'
 import {CampoDiv, InputSubmit} from '../../components/ui/Formulario'
 import Boton from '../../components/ui/Boton';
+import Swal from 'sweetalert2';
 
 const ContenerdorProducto = styled.div`
     @media (min-width:968px){
@@ -121,6 +122,33 @@ const Producto = () => {
             return true
         }
     }
+    ///funcion para revisar que el creador sea el mismo que el autenticado 
+    const puedeBorrar = () => {
+        if(!usuario) return false
+        if(creador.id === usuario.uid){
+            return true
+        }
+    }
+    //elimina un prodsucto de la bd
+    const eliminarProducto = async () => {
+        if(!usuario){
+            router.push('/login')
+        }
+        if(creador.id !== usuario.uid){
+            router.push('/login')
+        }
+        try {
+            await firebase.db.collection('productos').doc(id).delete()
+            Swal.fire({
+                icon: 'success',
+                title: 'Listo',
+                text: 'Elemento eliminado!',
+              })
+              router.push('/')
+        } catch (error) {
+            
+        }
+    }
 
     return (
 
@@ -206,6 +234,11 @@ const Producto = () => {
                         </div>
                     </aside>
                 </ContenerdorProducto>
+                {puedeBorrar() &&
+                    <Boton
+                        onClick={eliminarProducto}
+                    >Eliminar producto</Boton>
+                }
             </div>       
             )}                                     
         </Layout>
